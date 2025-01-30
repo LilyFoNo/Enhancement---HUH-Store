@@ -1,9 +1,9 @@
 import React from "react";
-import { removeFnFItem } from "../features/counter/cartSlice";
+// import { removeFnFItem } from "../../features/counter/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { updateQuantity } from "../features/counter/cartSlice";
+import { updateQuantity, removeFnFItem } from "../../features/counter/cartSlice";
 
-import "../css/viewcart.css";
+import "./viewcart.css";
 
 function ViewCart(props) {
   const { itemsAdded, total, fnfItemAdded, fnfItemsTotal } = useSelector(
@@ -31,7 +31,7 @@ function ViewCart(props) {
             <div className="itemDisplay-vc">
               <div className="itemImg-vc">
                 <img
-                  src={require(`../shared/${item.images[0]}`)}
+                  src={require(`../../shared/${item.images[0]}`)}
                   alt={item.id}
                 ></img>
               </div>

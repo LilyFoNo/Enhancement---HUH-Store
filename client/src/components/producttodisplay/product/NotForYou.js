@@ -1,17 +1,17 @@
 // eslint-disable-next-line
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
-import CommonButton from "../components/CommonButton";
+import CommonButton from "../../CommonButton/CommonButton";
 import { useNavigate } from "react-router-dom";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import Rodal from "rodal";
 
-import imageData from "../shared/itemdata";
+import imageData from "../../../shared/itemdata";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../css/productDisp.css";
+import "../productDisp.css";
 import "rodal/lib/rodal.css";
 
 
@@ -93,7 +93,7 @@ function NotForYou() {
         >
           <div>
             <img
-              src={require(`../shared/${selectedImage}`)}
+              src={require(`../../../shared/${selectedImage}`)}
               alt="enlarged"
               className="enlarged-image"
               style={{width: '100%'}}            
@@ -141,7 +141,7 @@ function NotForYou() {
                   onMouseUp={(event) => handleMouseUp(event, image)}
                 >
                   <img
-                    src={require(`../shared/${image}`)}
+                    src={require(`../../../shared/${image}`)}
                     alt='jaja'
                     className="carousel-image"
                   />

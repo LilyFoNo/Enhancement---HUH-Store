@@ -5,14 +5,14 @@ import { IoIosArrowBack } from "react-icons/io";
 import Rodal from "rodal";
 import { useNavigate } from "react-router-dom";
 
-import imageData from "../shared/itemdata";
+import imageData from "../../../shared/itemdata";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../css/productDisp.css";
+import "../productDisp.css";
 import "rodal/lib/rodal.css";
 
 // import ReactPlayer from "react-player";
-import CommonButton from "../components/CommonButton";
+import CommonButton from "../../CommonButton/CommonButton";
 
 function DesireToFly() {
   const smallScreenMediaQuery = "(max-width: 700px)";
@@ -91,7 +91,7 @@ function DesireToFly() {
         >
           <div>
             <img
-              src={require(`../shared/${selectedImage}`)}
+              src={require(`../../../shared/${selectedImage}`)}
               alt="enlarged"
               className="enlarged-image"
               style={{ width: "100%" }}
@@ -139,7 +139,7 @@ function DesireToFly() {
                   onMouseUp={(event) => handleMouseUp(event, image)}
                 >
                   <img
-                    src={require(`../shared/${image}`)}
+                    src={require(`../../../shared/${image}`)}
                     alt='jaja'
                     className="carousel-image"
                   />

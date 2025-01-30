@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-
-import "../css/productDispDetail.css";
+import "./productDispDetail.css";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 import { useDispatch } from "react-redux";
 import Rodal from "rodal";
-import { addItem, setCartIsOpen } from "../features/counter/cartSlice";
+import { addItem, setCartIsOpen } from "../../features/counter/cartSlice";
 import "rodal/lib/rodal.css";
 
-import itemData from "../shared/itemdata";
+import itemData from "../../shared/itemdata";
 
 function DesireToFlyDetail() {
   const dispatch = useDispatch();
@@ -68,7 +67,7 @@ function DesireToFlyDetail() {
       >
         <div>
           <img
-            src={require(`../shared/asset.png`)}
+            src={require(`../../shared/asset.png`)}
             alt="enlarged"
             className="enlarged-image"
             style={{width: '100%'}}

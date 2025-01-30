@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import "./LandingPage.css";
 import { useLocation, useNavigate } from "react-router-dom";
 // eslint-disable-next-line
-import itemData from "../shared/itemdata";
+import itemData from "../../shared/itemdata";
 import Rodal from "rodal";
 import "rodal/lib/rodal.css";
 import ReactPlayer from "react-player";
-import CommonButton from "./CommonButton";
-import loadingGif from "../shared/bird.gif";
+import CommonButton from "../CommonButton/CommonButton";
+import loadingGif from "../../shared/bird.gif";
 
 function LandingPage(props) {
   const videoRef = useRef(undefined);

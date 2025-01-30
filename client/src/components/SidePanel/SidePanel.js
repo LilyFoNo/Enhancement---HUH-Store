@@ -6,9 +6,9 @@ import "./SidePanel.css";
 import {
   setCartIsOpen,
   updateQuantity,
-} from "../features/counter/cartSlice";
+} from "../../features/counter/cartSlice";
 import { Link } from "react-router-dom";
-import FnFItems from "./FnFItems";
+import FnFItems from "../FnFItems";
 
 function SidePanel(props) {
   const dispatch = useDispatch();
@@ -92,7 +92,7 @@ const CartItem = (props) => {
     <div className="itemDisplay">
       <div className="itemImg">
         {/* <img src={images[0]} alt={id}></img> */}
-        <img src={require(`../shared/${images[0]}`)} alt={id}></img>
+        <img src={require(`../../shared/${images[0]}`)} alt={id}></img>
       </div>
       <div className="itemInfo">
         <h2 className="productName">{name}</h2>

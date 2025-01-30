@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import Slider from 'react-slick';
 
-import imagesData from '../images/DTF.json'
+import imagesData from '../../images/DTF.json'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../css/productDisp.css'
+import '.productDisp.css'
 
 function ProductDisplayTemp(props) {
 

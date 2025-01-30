@@ -5,25 +5,23 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import { toast } from "react-toastify";
-//components
-import LandingPage from "./components/LandingPage";
 
-//screens
-import DesireToFly from "./screens/DesireToFly";
-import NotForYou from "./screens/NotForYou";
-import DesireToFlyDetail from "./screens/DesireToFlyDetail";
-import NotForYouDetail from "./screens/NotForYouDetail";
+import LandingPage from "./components/LandingPage/LandingPage.js";
+
+import DesireToFly from "./components/producttodisplay/product/DesireToFly.js"
+import NotForYou from "./components/producttodisplay/product/NotForYou.js";
+import DesireToFlyDetail from "./components/productDispDetail/DesireToFlyDetail.js";
+import NotForYouDetail from "./components/productDispDetail/NotForYouDetail.js";
 
 import "./App.css";
 
-//icons
 import { AiFillShopping } from "react-icons/ai";
 import { HiMenuAlt4 } from "react-icons/hi";
 
-import SidePanel from "./components/SidePanel";
+import SidePanel from "./components/SidePanel/SidePanel.js";
 import { useSelector, useDispatch } from "react-redux";
 import { setCartIsOpen } from "../src/features/counter/cartSlice.js";
-import ViewCart from "./screens/ViewCart";
+import ViewCart from "./components/ViewCart/ViewCart.js";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 
