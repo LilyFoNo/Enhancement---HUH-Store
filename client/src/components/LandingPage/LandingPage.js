@@ -19,17 +19,17 @@ function LandingPage(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [isLoading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     // Set a timeout to switch the loading state off after 4500ms
     const loadingTimer = setTimeout(() => {
       setLoading(false);
-    }, 4500);
-  
+    }, 2400);
+
     // Return a cleanup function that clears the timeout
     // if the component unmounts before the timeout is reached
     return () => clearTimeout(loadingTimer);
-  }, []); 
+  }, []);
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -99,7 +99,7 @@ function LandingPage(props) {
       setPasscodeErrorMsg("");
       setPasscodeError(false);
       setModalIsOpen(false);
-      alert('do not worry about this page')
+      alert("do not worry about this page");
     } else {
       //handleFailPasscode
       setPasscodeError(true);
@@ -109,11 +109,14 @@ function LandingPage(props) {
   };
 
   if (isLoading) {
-    return (
-      <div className="loading-container">
-        <img src={loadingGif} alt="Loading..." className="loader" />
-      </div>
-    );
+    if (localStorage.getItem("loading") === null) {
+      localStorage.setItem("loading", 'false');
+      return (
+        <div className="loading-container">
+          <img src={loadingGif} alt="Loading..." className="loader" />
+        </div>
+      );
+    }
   }
 
   return (
@@ -185,7 +188,7 @@ function LandingPage(props) {
         ref={props.fnfSectionRef}
       >
         <h2 className="fndTitle">friends and family</h2>
-        <CommonButton title="LOG IN HERE" onClickHandler={fnfClickHandler}/>
+        <CommonButton title="LOG IN HERE" onClickHandler={fnfClickHandler} />
       </div>
     </div>
   );
