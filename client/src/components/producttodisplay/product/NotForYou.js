@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../productDisp.css";
 import "rodal/lib/rodal.css";
+import NewLayout from "../../NewLayout/NewLayout";
 
 
 // import ReactPlayer from "react-player";
@@ -127,8 +128,8 @@ function NotForYou() {
           <img src="nfynew.jpg" className="newImg" alt="new dtf img"></img>
 
         </section>
-
-        <div className="carousel-container">
+            <NewLayout productID="nfy"/>
+        {/* <div className="carousel-container">
           <div className="arrow-left" onClick={handlePrevious}>
             <IoIosArrowBack size={iconSize} />
           </div>
@@ -152,7 +153,7 @@ function NotForYou() {
           <div className="arrow-right" onClick={handleNext}>
             <IoIosArrowForward size={iconSize} />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
