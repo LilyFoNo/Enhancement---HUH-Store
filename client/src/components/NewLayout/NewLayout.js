@@ -25,8 +25,10 @@ const NewLayout = ({ productID, productRef }) => {
     setSize(event.target.value);
   };
 
-  const handleSizeChart = (image) => {
+  const handleImageModal = (image) => {
     setIsModalOpen(true);
+    const imageModal = document.getElementById("modal-image");
+    imageModal.src = image;
   };
 
   const handleAddToCart = (item) => {
@@ -73,13 +75,17 @@ const NewLayout = ({ productID, productRef }) => {
                 src={require(`../../shared/asset.png`)}
                 alt="enlarged"
                 className="enlarged-image"
-                style={{ width: "100%" }}
+                id="modal-image"
+                style={{ width: "100%"}}
               />
             </div>
           </Rodal>
           <div className="front-product">
             <div className="product-image">
               <img
+                onClick={() =>
+                  handleImageModal(require(`../../shared/${imageNFY.images[0]}`))
+                }
                 src={require(`../../shared/${imageNFY.images[0]}`)}
                 alt="Front Image"
               />
@@ -91,6 +97,9 @@ const NewLayout = ({ productID, productRef }) => {
           <div className="back-product">
             <div className="product-image">
               <img
+                onClick={() =>
+                  handleImageModal(require(`../../shared/${imageNFY.images[1]}`))
+                }
                 src={require(`../../shared/${imageNFY.images[1]}`)}
                 alt="Front Image"
               />
@@ -131,7 +140,12 @@ const NewLayout = ({ productID, productRef }) => {
               >
                 Add to Cart
               </button>
-              <button className="button-cart-size" onClick={handleSizeChart}>
+              <button
+                className="button-cart-size"
+                onClick={() =>
+                  handleImageModal(require(`../../shared/asset.png`))
+                }
+              >
                 Size Chart
               </button>
             </div>
@@ -139,7 +153,6 @@ const NewLayout = ({ productID, productRef }) => {
         </div>
       ) : (
         <div>
-          
           <h1>Produt Not Found</h1>
         </div>
       )}
