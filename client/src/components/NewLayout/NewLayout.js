@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 import { addItem, setCartIsOpen } from "../../features/counter/cartSlice";
 
 const NewLayout = ({ productID, productRef }) => {
-  const imageNFY = imageData.find((img) => img.id === "nfy");
+  const imageNFY = imageData.find((img) => img.id === productID);
   const imageDTF = imageData.find((img) => img.id === "dtf");
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
@@ -98,16 +98,18 @@ const NewLayout = ({ productID, productRef }) => {
             <div className="product-form">
               <h3>{imageNFY.name.toUpperCase()}</h3>
               <h4>{`CAD: $${imageNFY.priceInCad}`}</h4>
-              <label className="text" htmlFor="input-quantity">
-                Quantity
-              </label>
-              <input
-                type="number"
-                min={1}
-                value={quantity}
-                onChange={handleQuantityChange}
-                id="input-quantity"
-              />
+              <div className="quaintity-container">
+                <label className="text" htmlFor="input-quantity">
+                  Quantity
+                </label>
+                <input
+                  type="number"
+                  min={1}
+                  value={quantity}
+                  onChange={handleQuantityChange}
+                  id="input-quantity"
+                />
+              </div>
               <h4 className="text">Size</h4>
               <div className="dropdown">
                 <FormControl sx={{ height: "2rem", minWidth: 90 }} size="small">
@@ -136,75 +138,9 @@ const NewLayout = ({ productID, productRef }) => {
           </div>
         </div>
       ) : (
-        <div className="product-container-new-layout" ref={productRef}>
-          <Rodal
-            visible={isModalOpen}
-            onClose={closeModal}
-            customStyles={customStyles}
-          >
-            <div>
-              <img
-                src={require(`../../shared/asset.png`)}
-                alt="enlarged"
-                className="enlarged-image"
-                style={{ width: "100%" }}
-              />
-            </div>
-          </Rodal>
-          <div className="front-product">
-            <div className="product-image">
-              <img
-                src={require(`../../shared/${imageDTF.images[0]}`)}
-                alt="Front Image"
-              />
-            </div>
-            <div className="product-description">
-              <p>{imageDTF.description}</p>
-            </div>
-          </div>
-          <div className="back-product">
-            <div className="product-image">
-              <img
-                src={require(`../../shared/${imageDTF.images[1]}`)}
-                alt="Front Image"
-              />
-            </div>
-            <div className="product-form">
-              <h3>{imageDTF.name.toUpperCase()}</h3>
-              <h4>{`CAD: $${imageDTF.priceInCad}`}</h4>
-              <label className="text">Quantity</label>
-              <input
-                type="number"
-                min={1}
-                value={quantity}
-                onChange={handleQuantityChange}
-              />
-              <h4 className="text">Size</h4>
-              <div className="dropdown">
-                <FormControl sx={{ height: "2rem", minWidth: 90 }} size="small">
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={size}
-                    onChange={handleSizeChange}
-                  >
-                    <MenuItem value="small">Small</MenuItem>
-                    <MenuItem value="medium">Medium</MenuItem>
-                    <MenuItem value="large">Large</MenuItem>
-                  </Select>
-                </FormControl>
-              </div>
-              <button
-                className="button-cart-add"
-                onClick={() => handleAddToCart(imageDTF)}
-              >
-                Add to Cart
-              </button>
-              <button className="button-cart-size" onClick={handleSizeChart}>
-                Size Chart
-              </button>
-            </div>
-          </div>
+        <div>
+          
+          <h1>Produt Not Found</h1>
         </div>
       )}
     </>
