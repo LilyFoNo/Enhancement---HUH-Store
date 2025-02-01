@@ -10,8 +10,6 @@ import LandingPage from "./components/LandingPage/LandingPage.js";
 
 import DesireToFly from "./components/producttodisplay/product/DesireToFly.js"
 import NotForYou from "./components/producttodisplay/product/NotForYou.js";
-import DesireToFlyDetail from "./components/productDispDetail/DesireToFlyDetail.js";
-import NotForYouDetail from "./components/productDispDetail/NotForYouDetail.js";
 
 import "./App.css";
 
@@ -162,8 +160,6 @@ function App() {
         />
         <Route path="/desiretofly" element={<DesireToFly />} />
         <Route path="/notforyou" element={<NotForYou />} />
-        <Route path="/desiretoflydetail" element={<DesireToFlyDetail />} />
-        <Route path="/notforyoudetail" element={<NotForYouDetail />} />
         <Route path="/viewcart" element={<ViewCart />} />
 
       </Routes>
