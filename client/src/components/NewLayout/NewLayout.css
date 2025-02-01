@@ -96,6 +96,10 @@
 
   .product-container-new-layout .back-product .product-form h4 {
     font-size: 3.5vw;
-
   }
+  .product-container-new-layout .back-product .product-form .button-cart-add,
+.product-container-new-layout .back-product .product-form .button-cart-size {
+  font-size: 3vw;
+  padding: 0.2rem;
+}
 }

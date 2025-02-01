@@ -35,7 +35,6 @@ function DesireToFly() {
   };
   const customStyles = getCustomStyles();
 
-  // const navigate = useNavigate();
 
   const scrollSection = () => {
     if (productRef.current) {
