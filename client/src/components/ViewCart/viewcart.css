@@ -2,16 +2,14 @@
 .body-container-vc {
   display: flex;
   justify-content: center;
-  margin-top: 10rem;
-  gap: 30px;
-  /* padding-top: 5rem; */
+  margin-top: 7rem;
 }
 .cartItemsContainer-vc {
-  width: 500px;
+  width: 31rem;
+  padding: 1rem 2rem;
 }
 
 #viewCart{
-  /* background-color: orange; */
   padding: 1rem;
   margin: 1rem 0rem;
 }
@@ -19,10 +17,12 @@
 @media (max-width: 1000px) {
   .body-container-vc {
     flex-direction: column;
-    align-items: center; /* Optional: Center align items vertically */
+    align-items: center;
+    margin-top: 5rem;
+
   }
   .cartItemsContainer-vc {
-    width: 350px;
+    width: 22rem;
     padding-bottom: 2rem;
   }
 }
@@ -57,7 +57,7 @@
   padding: 1rem;
 }
 .itemInfo-vc > h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .productName-vc {
   color: grey;
@@ -93,12 +93,13 @@
   margin: 0 0.2rem;
 }
 .selectBtns-vc > h2 {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 /* ORDER SUMMARY */
 .price-list-vc {
   width: 350px;
+  padding: 1rem 2rem 0.5rem 2rem;
 }
 
 .subtotal-value-vc,
