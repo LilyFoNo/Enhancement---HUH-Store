@@ -52,7 +52,6 @@ function DesireToFly() {
   };
 
   useEffect(() => {
-    console.log(dispatch(setNavbarColor("gray")));
     dispatch(setNavbarColor("white"));
     return () => {
       dispatch(setNavbarColor("black"));
@@ -64,7 +63,7 @@ function DesireToFly() {
       dispatch(setNavbarColor("white"));
       setLastInView("section1");
     } else if (inViewSection2 && lastInView !== "section2") {
-      dispatch(setNavbarColor("black"));
+      dispatch(setNavbarColor("#808080"));
       setLastInView("section2");
     }
   }, [inViewSection1, inViewSection2, dispatch]);
