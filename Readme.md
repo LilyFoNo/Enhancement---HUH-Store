@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Assignment Instructions: 
+# ReactJS Application Enhancement - HUH Store
 
-In the project directory, you can run:
+## Objective
+In this assignment, you will implement design and functionality changes to an existing ReactJS application as outlined below. Diagrams are provided to help illustrate the requirements.
 
-### `yarn start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Tasks
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### 1. Fix Loading Spinner Behavior
+- Ensure the spinner spins until all contents are fully loaded.
+  - **First-time load:** Should take approximately **2.4 seconds** (to show the spinner to website visitors).
+  - **Subsequent loads:** Spinner time should be significantly reduced or eliminated (e.g., returning to the homepage from another page).
 
-### `yarn test`
+#### 2. Merge Detail Pages with Parent Pages
+- Merge the **detail page** with its **parent page** for **DTF** and **NFY** sections.
+- Refer to the provided mockup designs for guidance:
+  - Existing Design:
+    ![Existing Page Design](./docs/existing.jpg "Existing Design")
+  - New Layout Structure:
+    ![New Page Layout](./docs/layout.png "New Layout Structure")
+  - Merge the detail page into the parent page like so: 
+    ![Merged Layout Example](./docs/layoutdDetail.png "Merged Layout Example")
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 3. Dynamic Navbar
+- The navbar items should dynamically change colors to ensure it is contrasting with the background.
+  - For example, the nav items are dark in color, so when there's a dark background underneath, it should change to white to show contrast. Check out `.../desiretofly` to observe that the navbar items are barely visible.
 
-### `yarn build`
+#### 4. Other Requirements 
+- **Existing button click functionality:**
+  - Clicking on the Front/Back t-shirt images should open modal. No need for carousal.  
+  - Size chart button should also work as before. 
+- **Scroll Down Button:**
+  - When clicked, the "Down arrow" should scroll into view to the next section at a **slow speed**.
+- **Remove unwanted scrollbar:**
+  - Scroll bar should not be visible on any components in the app (expect the main vertical scrollbar).
+- **Clickable Contact Email:**
+  - Clicking on the contact email should open the default email app.
+- **Dummy Contact Links:**
+  - Ensure 3 contact links are clickable (can remain as dummy links).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 5. Responsiveness
+- Ensure the design is responsive across:
+  - Mobile devices
+  - Tablets
+  - Desktops.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### 6. Design Standardization
+- Use relative units (e.g., %, em, rem) where possible.
+- Eliminate unnecessary or uneven padding/margin.
+- **Maintain the current theme and colors**, but you may improve the overall design by optionally using styling/animation libraries or standardized design principles.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 7. Deployment
+- Deploy the project using a hosting provider of your choice (e.g., **Vercel**, **GitHub Actions**, **Netlify**, etc.).
+- Submit the deployed project’s URL via the provided Google Form:
+  - [Google Form Link](https://docs.google.com/forms/d/e/1FAIpQLScuVIsQOo_ZRKPBbz8kmd52NE_EeoJ-Y90dG6g-I0i_DGgqdg/viewform?usp=sharing)
 
-### `yarn eject`
+#### 8. Add Error Pages
+- Include a **404 page** and other appropriate error pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### 9. Preserve Existing Functionality
+- Ensure all existing features and functionality remain intact. For example, clicking on the image should open a modal to view the image in full.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Optional (Not Required):
+- Conversion to a Vite application is **not required**.
+- Using TypeScript for this project is **not required** (you may do so if desired).
+- Storing all information as props in the root component is **not required**. Descriptions and product details can remain hard-coded.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Notes
+- Explore the project to learn more about 
+    - Redux
+    - Docker files
+    - Project structure
+    - Package.json for loading env files.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Submission
+- Deploy the project and submit the live URL using the [Google Form](https://docs.google.com/forms/d/e/1FAIpQLScuVIsQOo_ZRKPBbz8kmd52NE_EeoJ-Y90dG6g-I0i_DGgqdg/viewform?usp=sharing).
