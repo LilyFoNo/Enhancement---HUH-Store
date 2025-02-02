@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 import LandingPage from "./components/LandingPage/LandingPage.js";
 
-import DesireToFly from "./components/producttodisplay/product/DesireToFly.js"
+import DesireToFly from "./components/producttodisplay/product/DesireToFly.js";
 import NotForYou from "./components/producttodisplay/product/NotForYou.js";
 
 import "./App.css";
@@ -25,19 +25,16 @@ import Footer from "./components/Footer";
 
 toast.configure();
 
-
 function App() {
   const dispatch = useDispatch();
-  const {
-    // total,
-    // fnfItemsTotal,
-    CartIsOpen: sidePanel,
-  } = useSelector((state) => state.cart);
+  const { CartIsOpen: sidePanel } = useSelector((state) => state.cart);
   const [navOpened, setNavOpen] = useState(false);
 
   const openNavBarRef = useRef();
   const sidePanelRef = useRef();
   const navigate = useNavigate();
+
+  const setNavbarColor = useSelector((state) => state.navbar.color);
 
   const [screenSize, setScreenSize] = useState({
     width: window.innerWidth,
@@ -127,9 +124,9 @@ function App() {
           </div>
         ) : (
           <HiMenuAlt4
-            size={40}
+            size={window.innerWidth <= 700 ? 30: 40}
             className="hiMenu"
-            color="black"
+            style={{ fill: setNavbarColor, transition: "1s all ease" }}
             onClick={() => {
               setNavOpen(!navOpened);
             }}
@@ -138,8 +135,8 @@ function App() {
         {(navOpened && screenSize.width < 430) || (
           <AiFillShopping
             className="shoppingCartIcon"
-            size={40}
-            color="black"
+            size={window.innerWidth <= 700 ? 30: 40}
+            style={{ fill: setNavbarColor, transition: "1s all ease" }}
             onClick={() => {
               dispatch(setCartIsOpen(!sidePanel));
             }}
@@ -161,7 +158,6 @@ function App() {
         <Route path="/desiretofly" element={<DesireToFly />} />
         <Route path="/notforyou" element={<NotForYou />} />
         <Route path="/viewcart" element={<ViewCart />} />
-
       </Routes>
       <Footer />
     </div>

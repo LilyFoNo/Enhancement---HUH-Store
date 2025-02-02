@@ -59,112 +59,112 @@ const NewLayout = ({ productID, productRef }) => {
 
   return (
     <>
-      {productID === imageNFY.id ? (
-        <div
-          className="product-container-new-layout"
-          id="notForYou"
-          ref={productRef}
-        >
-          <Rodal
-            visible={isModalOpen}
-            onClose={closeModal}
-            customStyles={customStyles}
+        {productID === imageNFY.id ? (
+          <div
+            className="product-container-new-layout"
+            id="notForYou"
+            ref={productRef}
           >
-            <div>
-              <img
-                src={require(`../../shared/asset.png`)}
-                alt="enlarged"
-                className="enlarged-image"
-                id="modal-image"
-                style={{ width: "100%" }}
-              />
-            </div>
-          </Rodal>
-          <div className="front-product">
-            <div className="product-image">
-              <img
-                onClick={() =>
-                  handleImageModal(
-                    require(`../../shared/${imageNFY.images[0]}`)
-                  )
-                }
-                src={require(`../../shared/${imageNFY.images[0]}`)}
-                alt="Front Image"
-              />
-            </div>
-            <div className="product-description">
-              <p>{imageNFY.description}</p>
-            </div>
-          </div>
-          <div className="back-product">
-            <div className="product-image">
-              <img
-                onClick={() =>
-                  handleImageModal(
-                    require(`../../shared/${imageNFY.images[1]}`)
-                  )
-                }
-                src={require(`../../shared/${imageNFY.images[1]}`)}
-                alt="Front Image"
-              />
-            </div>
-            <div className="product-form">
-              <h3>{imageNFY.name.toUpperCase()}</h3>
-              <h4>{`CAD: $${imageNFY.priceInCad}`}</h4>
-              <div className="details-purchase">
-                <div className="quaintity-container">
-                  <label className="text" htmlFor="input-quantity">
-                    Quantity
-                  </label>
-                  <input
-                    type="number"
-                    min={1}
-                    value={quantity}
-                    onChange={handleQuantityChange}
-                    id="input-quantity"
-                  />
-                </div>
-                <h4 className="text">Size</h4>
-                <div className="dropdown">
-                  <FormControl
-                    sx={{ height: "2rem", minWidth: 90 }}
-                    size="small"
-                  >
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={size}
-                      onChange={handleSizeChange}
-                    >
-                      <MenuItem value="small">Small</MenuItem>
-                      <MenuItem value="medium">Medium</MenuItem>
-                      <MenuItem value="large">Large</MenuItem>
-                    </Select>
-                  </FormControl>
-                </div>
-                <button
-                  className="button-cart-add"
-                  onClick={() => handleAddToCart(imageNFY)}
-                >
-                  Add to Cart
-                </button>
-                <button
-                  className="button-cart-size"
+            <Rodal
+              visible={isModalOpen}
+              onClose={closeModal}
+              customStyles={customStyles}
+            >
+              <div>
+                <img
+                  src={require(`../../shared/asset.png`)}
+                  alt="enlarged"
+                  className="enlarged-image"
+                  id="modal-image"
+                  style={{ width: "100%" }}
+                />
+              </div>
+            </Rodal>
+            <div className="front-product">
+              <div className="product-image">
+                <img
                   onClick={() =>
-                    handleImageModal(require(`../../shared/asset.png`))
+                    handleImageModal(
+                      require(`../../shared/${imageNFY.images[0]}`)
+                    )
                   }
-                >
-                  Size Chart
-                </button>
+                  src={require(`../../shared/${imageNFY.images[0]}`)}
+                  alt="Front Image"
+                />
+              </div>
+              <div className="product-description">
+                <p>{imageNFY.description}</p>
+              </div>
+            </div>
+            <div className="back-product">
+              <div className="product-image">
+                <img
+                  onClick={() =>
+                    handleImageModal(
+                      require(`../../shared/${imageNFY.images[1]}`)
+                    )
+                  }
+                  src={require(`../../shared/${imageNFY.images[1]}`)}
+                  alt="Front Image"
+                />
+              </div>
+              <div className="product-form">
+                <h3>{imageNFY.name.toUpperCase()}</h3>
+                <h4>{`CAD: $${imageNFY.priceInCad}`}</h4>
+                <div className="details-purchase">
+                  <div className="quaintity-container">
+                    <label className="text" htmlFor="input-quantity">
+                      Quantity
+                    </label>
+                    <input
+                      type="number"
+                      min={1}
+                      value={quantity}
+                      onChange={handleQuantityChange}
+                      id="input-quantity"
+                    />
+                  </div>
+                  <h4 className="text">Size</h4>
+                  <div className="dropdown">
+                    <FormControl
+                      sx={{ height: "2rem", minWidth: 90 }}
+                      size="small"
+                    >
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={size}
+                        onChange={handleSizeChange}
+                      >
+                        <MenuItem value="small">Small</MenuItem>
+                        <MenuItem value="medium">Medium</MenuItem>
+                        <MenuItem value="large">Large</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+                  <button
+                    className="button-cart-add"
+                    onClick={() => handleAddToCart(imageNFY)}
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    className="button-cart-size"
+                    onClick={() =>
+                      handleImageModal(require(`../../shared/asset.png`))
+                    }
+                  >
+                    Size Chart
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <div>
-          <h1>Produt Not Found</h1>
-        </div>
-      )}
+        ) : (
+          <div>
+            <h1>Produt Not Found</h1>
+          </div>
+        )}
     </>
   );
 };

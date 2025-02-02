@@ -33,6 +33,7 @@ button {
   align-items: flex-start;
   flex-direction: row;
 }
+
 .shoppingCartIcon {
   justify-self: flex-end;
   cursor: pointer;

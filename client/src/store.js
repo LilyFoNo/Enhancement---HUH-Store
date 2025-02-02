@@ -4,6 +4,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 import cartReducer from "./features/counter/cartSlice";
 import userSliceReducer from "./features/counter/userSlice";
 import rodalSlice from "./features/counter/rodalSlice";
+import navbarSlice from "./features/counter/navbarSlice"
 
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage/session";
@@ -19,9 +20,11 @@ const rootReducer = combineReducers({
   user: userSliceReducer,
   cart: cartReducer,
   rodal: rodalSlice,
+  navbar: navbarSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
