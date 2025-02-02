@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { IoPerson } from "react-icons/io5";
+import { CiMail } from "react-icons/ci";
 
 function Footer(props) {
   const iconSize = 28;
@@ -21,7 +22,15 @@ function Footer(props) {
           rel="noopener noreferrer"
           href="https://howuniversehowls.myportfolio.com/"
         >
-          <IoPerson size={iconSize/1.2} />
+          <IoPerson size={iconSize / 1.2} />
+        </a>
+        <a
+          className="footerHyperlink"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="mailto:howuniversehowls@gmail.com"
+        >
+          <CiMail size={iconSize} />
         </a>
       </div>
     </section>
