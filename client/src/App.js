@@ -22,6 +22,7 @@ import { setCartIsOpen } from "../src/features/counter/cartSlice.js";
 import ViewCart from "./components/ViewCart/ViewCart.js";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
+import ErrorPage from "./components/ErrorPage/ErrorPage.js";
 
 toast.configure();
 
@@ -170,8 +171,10 @@ function App() {
         <Route path="/desiretofly" element={<DesireToFly />} />
         <Route path="/notforyou" element={<NotForYou />} />
         <Route path="/viewcart" element={<ViewCart />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
+      
     </div>
   );
 }
