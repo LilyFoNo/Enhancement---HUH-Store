@@ -8,7 +8,7 @@
 .product-container-new-layout .front-product,
 .product-container-new-layout .back-product {
   border: 1px solid black;
-  width: 35vw;
+  width: 30vw;
 }
 
 .product-container-new-layout .front-product .product-image,
@@ -24,13 +24,13 @@
 
 .product-container-new-layout .front-product .product-description p {
   text-align: justify;
-  margin: 2rem;
+  margin: 0 1rem 1rem 1rem;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
 }
 
 .product-container-new-layout .back-product .product-form {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   width: 100%;
 }
 
@@ -83,7 +83,7 @@
 
   .product-container-new-layout .front-product,
   .product-container-new-layout .back-product {
-    width: 50vw;
+    width: 55vw;
   }
 
   .product-container-new-layout .front-product .product-description p {
