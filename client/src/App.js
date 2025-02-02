@@ -70,12 +70,24 @@ function App() {
     };
     window.addEventListener("resize", handleResize);
 
+    //Scroll Down and Up Button
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowDown") {
+        window.scrollBy({ top: 100, behavior: "smooth" });
+      } else if (event.key === "ArrowUp") {
+        window.scrollBy({ bottom: 100, behavior: "smooth" });
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.removeEventListener("mousedown", handleNavOutsideClick);
       document.removeEventListener("mousedown", handlePanelOutsideClick);
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   });
+
   // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
@@ -124,7 +136,7 @@ function App() {
           </div>
         ) : (
           <HiMenuAlt4
-            size={window.innerWidth <= 700 ? 30: 40}
+            size={window.innerWidth <= 700 ? 30 : 40}
             className="hiMenu"
             style={{ fill: setNavbarColor, transition: "1s all ease" }}
             onClick={() => {
@@ -135,7 +147,7 @@ function App() {
         {(navOpened && screenSize.width < 430) || (
           <AiFillShopping
             className="shoppingCartIcon"
-            size={window.innerWidth <= 700 ? 30: 40}
+            size={window.innerWidth <= 700 ? 30 : 40}
             style={{ fill: setNavbarColor, transition: "1s all ease" }}
             onClick={() => {
               dispatch(setCartIsOpen(!sidePanel));

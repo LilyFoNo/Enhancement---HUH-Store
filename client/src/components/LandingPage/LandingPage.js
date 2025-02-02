@@ -109,8 +109,8 @@ function LandingPage(props) {
   };
 
   if (isLoading) {
-    if (localStorage.getItem("loading") === null) {
-      localStorage.setItem("loading", 'false');
+    if (sessionStorage.getItem("loading") === null) {
+      sessionStorage.setItem("loading", 'false');
       return (
         <div className="loading-container">
           <img src={loadingGif} alt="Loading..." className="loader" />
