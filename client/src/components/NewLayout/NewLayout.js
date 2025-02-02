@@ -76,7 +76,7 @@ const NewLayout = ({ productID, productRef }) => {
                 alt="enlarged"
                 className="enlarged-image"
                 id="modal-image"
-                style={{ width: "100%"}}
+                style={{ width: "100%" }}
               />
             </div>
           </Rodal>
@@ -84,7 +84,9 @@ const NewLayout = ({ productID, productRef }) => {
             <div className="product-image">
               <img
                 onClick={() =>
-                  handleImageModal(require(`../../shared/${imageNFY.images[0]}`))
+                  handleImageModal(
+                    require(`../../shared/${imageNFY.images[0]}`)
+                  )
                 }
                 src={require(`../../shared/${imageNFY.images[0]}`)}
                 alt="Front Image"
@@ -98,7 +100,9 @@ const NewLayout = ({ productID, productRef }) => {
             <div className="product-image">
               <img
                 onClick={() =>
-                  handleImageModal(require(`../../shared/${imageNFY.images[1]}`))
+                  handleImageModal(
+                    require(`../../shared/${imageNFY.images[1]}`)
+                  )
                 }
                 src={require(`../../shared/${imageNFY.images[1]}`)}
                 alt="Front Image"
@@ -107,47 +111,52 @@ const NewLayout = ({ productID, productRef }) => {
             <div className="product-form">
               <h3>{imageNFY.name.toUpperCase()}</h3>
               <h4>{`CAD: $${imageNFY.priceInCad}`}</h4>
-              <div className="quaintity-container">
-                <label className="text" htmlFor="input-quantity">
-                  Quantity
-                </label>
-                <input
-                  type="number"
-                  min={1}
-                  value={quantity}
-                  onChange={handleQuantityChange}
-                  id="input-quantity"
-                />
-              </div>
-              <h4 className="text">Size</h4>
-              <div className="dropdown">
-                <FormControl sx={{ height: "2rem", minWidth: 90 }} size="small">
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={size}
-                    onChange={handleSizeChange}
+              <div className="details-purchase">
+                <div className="quaintity-container">
+                  <label className="text" htmlFor="input-quantity">
+                    Quantity
+                  </label>
+                  <input
+                    type="number"
+                    min={1}
+                    value={quantity}
+                    onChange={handleQuantityChange}
+                    id="input-quantity"
+                  />
+                </div>
+                <h4 className="text">Size</h4>
+                <div className="dropdown">
+                  <FormControl
+                    sx={{ height: "2rem", minWidth: 90 }}
+                    size="small"
                   >
-                    <MenuItem value="small">Small</MenuItem>
-                    <MenuItem value="medium">Medium</MenuItem>
-                    <MenuItem value="large">Large</MenuItem>
-                  </Select>
-                </FormControl>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={size}
+                      onChange={handleSizeChange}
+                    >
+                      <MenuItem value="small">Small</MenuItem>
+                      <MenuItem value="medium">Medium</MenuItem>
+                      <MenuItem value="large">Large</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+                <button
+                  className="button-cart-add"
+                  onClick={() => handleAddToCart(imageNFY)}
+                >
+                  Add to Cart
+                </button>
+                <button
+                  className="button-cart-size"
+                  onClick={() =>
+                    handleImageModal(require(`../../shared/asset.png`))
+                  }
+                >
+                  Size Chart
+                </button>
               </div>
-              <button
-                className="button-cart-add"
-                onClick={() => handleAddToCart(imageNFY)}
-              >
-                Add to Cart
-              </button>
-              <button
-                className="button-cart-size"
-                onClick={() =>
-                  handleImageModal(require(`../../shared/asset.png`))
-                }
-              >
-                Size Chart
-              </button>
             </div>
           </div>
         </div>
